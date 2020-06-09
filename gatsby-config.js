@@ -27,5 +27,16 @@ module.exports = {
         icon: ``
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts-v2`,
+      options: {
+        fonts: [
+          {
+            family: 'Poppins',
+            weights: [300, 400, 500, 700]
+          }
+        ]
+      }
+    }
   ],
 }
