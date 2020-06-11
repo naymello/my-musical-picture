@@ -1,19 +1,23 @@
 import styled from 'styled-components'
 
 const StyledForm = styled.form`
-  font-size: 0;
+  margin-top: 15px;
 
   label {
+    padding: 10px 0;
     background-color: #EEFF00;
     display: inline-block;
-    height: 4rem;
-    width: 33%;
+    width: 33.33%;
     max-width: 340px;
-    line-height: 4rem;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 500;
+    margin: 10px 0;
     cursor: pointer;
+  }
+
+  input:checked + label{
+    border: 3px solid #000000;
   }
 
   input[type="radio"] {
@@ -22,7 +26,7 @@ const StyledForm = styled.form`
 
   input[type="submit"] {
     background-color: #EEFF00;
-    width: 98.8%;
+    width: 100%;
     max-width: 1020px;
     height: 5rem;
     margin-top: 50px;
@@ -31,10 +35,6 @@ const StyledForm = styled.form`
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
-  }
-
-  input:checked + label{
-    border: 3px solid #000000;
   }
 `
 
