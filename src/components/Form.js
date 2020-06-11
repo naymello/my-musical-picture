@@ -33,13 +33,13 @@ const Form = () => {
         <input type="radio" id="colored" defaultValue="colored" name="theme" />
         <label htmlFor="colored">Colored</label>
 
-        <H3>Show names:</H3>
+        <H3>Show captions:</H3>
         <input type="radio" id="true" defaultValue="yes" name="captions" defaultChecked="true" />
         <label htmlFor="true">Yes</label>
         <input type="radio" id="false" defaultValue="no" name="captions" />
         <label htmlFor="false">Nope</label>
         
-        <input type="submit" defaultValue="Get picture" />
+        <input type="submit" value="Get picture" />
       </StyledForm>
     </Wrapper>
   )
