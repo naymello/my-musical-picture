@@ -8,7 +8,7 @@ const Navbar = styled.nav`
   z-index: 1;
   display: flex;
   align-items: flex-start;
-  background-color: #FAFAFA;
+  background-color: #FFF;
   height: ${props => props.isActive ? '150px' : '60px'};
   transition: .2s;
   transition-timing-function: ease-in-out;
@@ -53,7 +53,10 @@ const Navbar = styled.nav`
       height: 2rem;
       flex-direction: row;
       margin-left: auto;
-      width: 20%;
+      width: 150px;
+      background-color: #EEFF00;
+      box-sizing: content-box;
+      padding: 10px 30px;
       max-width: 50rem;
       position: static;
       pointer-events: all;
