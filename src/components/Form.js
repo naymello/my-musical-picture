@@ -6,7 +6,7 @@ import { H2, H3 } from '../styles/Headers'
 
 const Form = () => {
   return (
-    <Wrapper>
+    <Wrapper maxWidth="768px">
       <H2>Settings</H2>
       <StyledForm method="GET" action="/picture">
         <H3>What data to show:</H3>
