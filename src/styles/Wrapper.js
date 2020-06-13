@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import Navbar from './Navbar'
+import StyledFooter from './StyledFooter'
 
 const Wrapper = styled.div`
   width: calc(100% - 20px);
@@ -10,6 +11,12 @@ const Wrapper = styled.div`
   ${Navbar} & {
     display: flex;
     margin: 20px auto 0;
+  }
+
+  ${StyledFooter} & {
+    display: flex;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 `
 
