@@ -6,7 +6,7 @@ import StyledFooter from './StyledFooter'
 const Wrapper = styled.div`
   width: calc(100% - 20px);
   max-width: ${props => props.maxWidth || '1440px'};
-  margin: 80px auto 0;
+  margin: 100px auto 0;
 
   ${Navbar} & {
     display: flex;
