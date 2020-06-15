@@ -30,6 +30,11 @@ const GlobalStyle = createGlobalStyle`
   h3 {
     font-size: 1.6rem;
   }
+
+  p {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
 `
 
 export default GlobalStyle
