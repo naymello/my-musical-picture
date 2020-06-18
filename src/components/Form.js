@@ -4,6 +4,8 @@ import StyledForm from '../styles/StyledForm'
 import Wrapper from '../styles/Wrapper'
 
 const Form = () => {
+  const accessToken = new URLSearchParams(window.location.search).get('access_token')
+
   return (
     <Wrapper maxWidth="768px">
       <h2>Settings</h2>
@@ -37,6 +39,8 @@ const Form = () => {
         <label htmlFor="true">Yes</label>
         <input type="radio" id="false" defaultValue="no" name="captions" />
         <label htmlFor="false">Nope</label>
+
+        <input type="hidden" name="access_token" defaultValue={accessToken}/>
         
         <input type="submit" value="Get picture" />
       </StyledForm>
