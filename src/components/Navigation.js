@@ -35,7 +35,7 @@ class Navigation extends Component {
           <img src={logo} alt="Logo"/>
           <ul>
             <li><StyledLink href="https://github.com/naymello/my-musical-picture-client" onClick={this.disableNav}>GitHub</StyledLink></li>
-            <li><StyledLink href="#" onClick={this.disableNav}>Sobre</StyledLink></li>
+            <li><StyledLink href="#" onClick={this.disableNav}>About</StyledLink></li>
           </ul>
           <img src={hamburger} onClick={this.toggleNav}/>
         </Wrapper>
