@@ -41,11 +41,52 @@ const MusicalPicture = () => {
   }
 
   const [firstImageUrl, imageUrls] = getImageUrls(type)
+
+  const getText = (type, timeRange) => {
+    if (!userTopMusic || !userFirstName) return {}
+
+    let title, addInfo1, addInfo2
+    
+    const singularType = type.slice(0, -1) //example: artists becomes artist
+    
+    if (timeRange === 'short') {
+      title = `${userFirstName}'s ${singularType} of the month` 
+    } else if (timeRange === 'medium') {
+      title = `${userFirstName}'s ${singularType} of the semester` 
+    } else if (timeRange === 'long') {
+      title = `${userFirstName}'s favorite ${singularType}`
+    }
+    
+    const firstResult = userTopMusic[0]
+    const firstResultName = firstResult.name
+
+    if (type === 'tracks') {
+      addInfo1 = firstResult.album.name
+      addInfo2 = firstResult.artists[0].name
+    }
+    else if (type === 'albums') {
+      addInfo1 = firstResult.artists[0].name
+      addInfo2 = firstResult.release_date
+    }
+    else if (type === 'artists') {
+      addInfo1 = firstResult.genres[0]
+      addInfo2 = firstResult.genres[1]
+    }
+
+    const textInformation = {
+      title,
+      firstResultName,
+      addInfo1,
+      addInfo2,
+    }
+
+    return textInformation
+  }
+
+  const { title, firstResultName, addInfo1, addInfo2 } = getText(type, timeRange)
   
   return (
     <StyledPicture>
-      <p>{userFirstName}</p>
-      {imageUrls.map(imgUrl => <img src={imgUrl} />)}
     </StyledPicture>
   )
 }
