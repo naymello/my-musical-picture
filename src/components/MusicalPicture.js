@@ -29,6 +29,8 @@ const MusicalPicture = () => {
   console.log(userTopMusic)
 
   const displayImages = (type) => {
+    if (!userTopMusic) return null
+
     const imageUrls = type === 'tracks'
       ? userTopMusic.map(track => track.album.images[1].url)
       : userTopMusic.map(current => current.images[1].url)
@@ -39,7 +41,7 @@ const MusicalPicture = () => {
   return (
     <StyledPicture>
       <p>{userFirstName}</p>
-      {userTopMusic ? displayImages(type) : (<p>Loading...</p>)}
+      {displayImages(type)}
     </StyledPicture>
   )
 }
