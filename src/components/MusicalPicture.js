@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import StyledPicture from '../styles/StyledPicture'
+import StyledPicture, { HighlightSection, OthersSection, LogoHighlight } from '../styles/StyledPicture'
+import HighlightText from '../styles/HighlightText'
 
 const type = new URLSearchParams(window.location.search).get('type')
 const accessToken = new URLSearchParams(window.location.search).get('access_token')
@@ -87,7 +88,24 @@ const MusicalPicture = () => {
   const { title, firstResultName, addInfo1, addInfo2 } = getText(type, timeRange)
   
   return (
-    <StyledPicture>
+    <StyledPicture theme={theme}>
+      <h3><HighlightText>{title}</HighlightText></h3>
+
+      <HighlightSection>
+        <img src={firstImageUrl} />
+        <span><HighlightText>{firstResultName}</HighlightText></span>
+        <span>{addInfo1}</span>
+        <span>{addInfo2}</span>
+      </HighlightSection>
+
+      <h4>Other {type}</h4>
+      <OthersSection>
+        {imageUrls.map(imgUrl => (
+          <img src={imgUrl} />
+        ))}
+      </OthersSection>
+
+      <h5>My Musical <LogoHighlight>Picture</LogoHighlight></h5>
     </StyledPicture>
   )
 }
