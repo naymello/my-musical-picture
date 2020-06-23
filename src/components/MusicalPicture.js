@@ -56,7 +56,9 @@ const MusicalPicture = () => {
     }
     
     const firstResult = userTopMusic[0]
-    const firstResultName = firstResult.name
+    const firstResultName = firstResult.name.substring(0, 40).match(/^.*?(?= -)/)
+      || firstResult.name.substring(0, 40)
+    //RegEx to remove '- Remastered in X year' kind of complement
 
     if (type === 'tracks') {
       addInfo1 = firstResult.album.name
@@ -64,7 +66,7 @@ const MusicalPicture = () => {
     }
     else if (type === 'albums') {
       addInfo1 = firstResult.artists[0].name
-      addInfo2 = firstResult.release_date
+      addInfo2 = firstResult.release_date.substring(0, 4) //Get only the year
     }
     else if (type === 'artists') {
       addInfo1 = firstResult.genres[0]
