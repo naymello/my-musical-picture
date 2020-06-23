@@ -28,20 +28,24 @@ const MusicalPicture = () => {
 
   console.log(userTopMusic)
 
-  const displayImages = (type) => {
-    if (!userTopMusic) return null
-
+  const getImageUrls = (type) => {
+    if (!userTopMusic) return [[], []]
+    
     const imageUrls = type === 'tracks'
       ? userTopMusic.map(track => track.album.images[1].url)
       : userTopMusic.map(current => current.images[1].url)
-
-    return imageUrls.map(currentUrl => <img src={currentUrl} />)
+    
+    const firstImageUrl = imageUrls.shift()
+    
+    return [firstImageUrl, imageUrls]
   }
+
+  const [firstImageUrl, imageUrls] = getImageUrls(type)
   
   return (
     <StyledPicture>
       <p>{userFirstName}</p>
-      {displayImages(type)}
+      {imageUrls.map(imgUrl => <img src={imgUrl} />)}
     </StyledPicture>
   )
 }
