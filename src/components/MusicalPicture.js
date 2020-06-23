@@ -26,8 +26,6 @@ const MusicalPicture = () => {
     fetchSpotifyData()
   }, [])
 
-  console.log(userTopMusic)
-
   const getImageUrls = (type) => {
     if (!userTopMusic) return {}
     
