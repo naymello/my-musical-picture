@@ -38,20 +38,20 @@ const MusicalPicture = () => {
     return { firstImageUrl, imageUrls }
   }
 
-  const { firstImageUrl, imageUrls } = getImageUrls(type)
-
   const getText = (type, timeRange) => {
     if (!userTopMusic || !userFirstName) return {}
 
     let title, addInfo1, addInfo2
     
-    const singularType = type.slice(0, -1) //example: artists becomes artist
+    const singularType = type.slice(0, -1) //Example: 'artists' becomes 'artist'
     
     if (timeRange === 'short') {
       title = `${userFirstName}'s ${singularType} of the month` 
-    } else if (timeRange === 'medium') {
+    }
+    else if (timeRange === 'medium') {
       title = `${userFirstName}'s ${singularType} of the semester` 
-    } else if (timeRange === 'long') {
+    }
+    else if (timeRange === 'long') {
       title = `${userFirstName}'s favorite ${singularType}`
     }
     
@@ -83,6 +83,7 @@ const MusicalPicture = () => {
     return textInformation
   }
 
+  const { firstImageUrl, imageUrls } = getImageUrls(type)
   const { title, firstResultName, addInfo1, addInfo2 } = getText(type, timeRange)
   
   return (
