@@ -29,7 +29,7 @@ const MusicalPicture = () => {
   console.log(userTopMusic)
 
   const getImageUrls = (type) => {
-    if (!userTopMusic) return [[], []]
+    if (!userTopMusic) return {}
     
     const imageUrls = type === 'tracks'
       ? userTopMusic.map(track => track.album.images[1].url)
@@ -37,10 +37,10 @@ const MusicalPicture = () => {
     
     const firstImageUrl = imageUrls.shift()
     
-    return [firstImageUrl, imageUrls]
+    return { firstImageUrl, imageUrls }
   }
 
-  const [firstImageUrl, imageUrls] = getImageUrls(type)
+  const { firstImageUrl, imageUrls } = getImageUrls(type)
 
   const getText = (type, timeRange) => {
     if (!userTopMusic || !userFirstName) return {}
