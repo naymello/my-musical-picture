@@ -86,16 +86,40 @@ const MusicalPicture = () => {
     return textInformation
   }
 
+  const setTheme = (theme) => {
+    const lightTheme = {
+      backgroundColor: '#FCFCFC',
+      color: '#000000',
+      highlight: '#EEFF00 '
+    }
+    
+    const darkTheme = {
+      backgroundColor: '#000000',
+      color: '#FFFFFF',
+      highlight: '#DC1F1F'
+    }
+
+    const coloredTheme = {
+      backgroundColor: '#2929B1',
+      color: '#F9FF3E',
+      highlight: '#FF10A0'
+    }
+
+    if (theme === 'light') return lightTheme
+    if (theme === 'dark') return darkTheme
+    if (theme === 'colored') return coloredTheme
+  }
+
   const [firstImageUrl, imageUrls] = getImageUrls(type)
   const { title, firstResultName, addInfo1, addInfo2 } = getText(type, timeRange)
   
   return (
-    <StyledPicture theme={theme}>
-      <h3><HighlightText>{title}</HighlightText></h3>
+    <StyledPicture theme={setTheme(theme)}>
+      <h3><HighlightText theme={setTheme(theme)}>{title}</HighlightText></h3>
 
       <HighlightSection>
         <img src={firstImageUrl} />
-        <span><HighlightText>{firstResultName}</HighlightText></span>
+        <span><HighlightText theme={setTheme(theme)}>{firstResultName}</HighlightText></span>
         <span>{addInfo1}</span>
         <span>{addInfo2}</span>
       </HighlightSection>
@@ -107,7 +131,7 @@ const MusicalPicture = () => {
         ))}
       </OthersSection>
 
-      <h5>My Musical <LogoHighlight>Picture</LogoHighlight></h5>
+      <h5>My Musical <LogoHighlight theme={setTheme(theme)}>Picture</LogoHighlight></h5>
     </StyledPicture>
   )
 }

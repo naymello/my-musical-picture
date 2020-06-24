@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 const StyledPicture = styled.div`
-  background-color: #F4F4F4;
+  background-color: ${props => props.theme.backgroundColor};
+  color: ${props => props.theme.color};
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   position: absolute;
@@ -55,7 +56,7 @@ export const OthersSection = styled.section`
 `
 
 export const LogoHighlight = styled.span`
-  background-color: #EEFF00;
+  background-color: ${props => props.theme.highlight};
   padding: 0 20px 0 2.5px;
 `
 
