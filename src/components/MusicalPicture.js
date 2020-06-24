@@ -14,7 +14,7 @@ const MusicalPicture = () => {
   const theme = new URLSearchParams(window.location.search).get('theme')
   const captionsIsSelected = new URLSearchParams(window.location.search).get('captions')
   
-  const backendUrl = 'http://localhost:8888'
+  const backendUrl = 'http://my-musical-picture-server.herokuapp.com'
 
   useEffect(() => {
     const fetchSpotifyData = async () => {
