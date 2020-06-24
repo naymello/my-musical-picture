@@ -23,7 +23,7 @@ const IndexPage = () => (
       <h1>The best way to show off your <HighlightText>great</HighlightText> musical taste.</h1>
       <FlexContainer>
         <ImageSection>
-          <img src={coloredImg} alt="Coloured theme"/>
+          <img src={coloredImg} alt="Colored theme"/>
           <img src={lightImg} alt="Light theme"/>
           <img src={darkImg} alt="Dark theme"/>
         </ImageSection>
