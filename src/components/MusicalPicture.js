@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import StyledPicture, { HighlightSection, OthersSection, LogoHighlight } from '../styles/StyledPicture'
 import HighlightText from '../styles/HighlightText'
+import Captions from '../styles/Captions'
 
 const MusicalPicture = () => {
   const [userTopMusic, setUserTopMusic] = useState(null)
@@ -11,7 +12,7 @@ const MusicalPicture = () => {
   const accessToken = new URLSearchParams(window.location.search).get('access_token')
   const timeRange = new URLSearchParams(window.location.search).get('time_range')
   const theme = new URLSearchParams(window.location.search).get('theme')
-  const captions = new URLSearchParams(window.location.search).get('captions')
+  const captionsIsSelected = new URLSearchParams(window.location.search).get('captions')
   
   const backendUrl = 'http://localhost:8888'
 
@@ -110,8 +111,18 @@ const MusicalPicture = () => {
     if (theme === 'colored') return coloredTheme
   }
 
+  const getCaptions = () => {
+    if (!userTopMusic) return []
+
+    const captions = userTopMusic.map(current => current.name.match(/^.*?(?= -)/) || current.name)
+    captions.shift()
+
+    return captions
+  }
+  
   const [firstImageUrl, imageUrls] = getImageUrls(type)
   const { title, firstResultName, addInfo1, addInfo2 } = getText(type, timeRange)
+  const captions = getCaptions()
   
   return (
     <StyledPicture theme={getTheme(theme)}>
@@ -125,9 +136,13 @@ const MusicalPicture = () => {
       </HighlightSection>
 
       <h4>Other {type}</h4>
-      <OthersSection>
-        {imageUrls.map(imgUrl => (
-          <img src={imgUrl} />
+      <OthersSection captions={captionsIsSelected}>
+        {imageUrls.map((imgUrl, index) => (
+          <div>
+            {captionsIsSelected === 'true' &&
+            <Captions theme={getTheme(theme)}>{captions[index]}</Captions>}
+            <img src={imgUrl} />
+          </div>
         ))}
       </OthersSection>
 

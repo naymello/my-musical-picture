@@ -52,6 +52,10 @@ export const OthersSection = styled.section`
 
   img {
     width: 100%;
+
+    /* Space to fit the captions if they're included */
+    position: relative;
+    bottom: ${props => props.captions === 'true' ? '16.75px' : '0'};
   }
 `
 
