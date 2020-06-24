@@ -9,17 +9,19 @@ const timeRange = new URLSearchParams(window.location.search).get('time_range')
 const theme = new URLSearchParams(window.location.search).get('theme')
 const captions = new URLSearchParams(window.location.search).get('captions')
 
+const backendUrl = 'http://localhost:8888'
+
 const MusicalPicture = () => {
   const [userTopMusic, setUserTopMusic] = useState(null)
   const [userFirstName, setUserFirstName] = useState(null)
 
   useEffect(() => {
     const fetchSpotifyData = async () => {
-      const firstNameRes = await fetch(`http://localhost:8888/name?access_token=${accessToken}`)
+      const firstNameRes = await fetch(`${backendUrl}/name?access_token=${accessToken}`)
       const firstNameJson = await firstNameRes.json()
       setUserFirstName(firstNameJson)
   
-      const topMusicRes = await fetch(`http://localhost:8888/topmusic?access_token=${accessToken}&type=${type}&time_range=${timeRange}`)
+      const topMusicRes = await fetch(`${backendUrl}/topmusic?access_token=${accessToken}&type=${type}&time_range=${timeRange}`)
       const topMusicJson = await topMusicRes.json()
       setUserTopMusic(topMusicJson)
     }
