@@ -3,17 +3,17 @@ import React, { useState, useEffect } from 'react'
 import StyledPicture, { HighlightSection, OthersSection, LogoHighlight } from '../styles/StyledPicture'
 import HighlightText from '../styles/HighlightText'
 
-const type = new URLSearchParams(window.location.search).get('type')
-const accessToken = new URLSearchParams(window.location.search).get('access_token')
-const timeRange = new URLSearchParams(window.location.search).get('time_range')
-const theme = new URLSearchParams(window.location.search).get('theme')
-const captions = new URLSearchParams(window.location.search).get('captions')
-
-const backendUrl = 'http://localhost:8888'
-
 const MusicalPicture = () => {
   const [userTopMusic, setUserTopMusic] = useState(null)
   const [userFirstName, setUserFirstName] = useState(null)
+  
+  const type = new URLSearchParams(window.location.search).get('type')
+  const accessToken = new URLSearchParams(window.location.search).get('access_token')
+  const timeRange = new URLSearchParams(window.location.search).get('time_range')
+  const theme = new URLSearchParams(window.location.search).get('theme')
+  const captions = new URLSearchParams(window.location.search).get('captions')
+  
+  const backendUrl = 'http://localhost:8888'
 
   useEffect(() => {
     const fetchSpotifyData = async () => {
