@@ -35,9 +35,9 @@ const Form = () => {
         <label htmlFor="colored">Colored</label>
 
         <h3>Show captions:</h3>
-        <input type="radio" id="true" defaultValue="yes" name="captions" defaultChecked="true" />
+        <input type="radio" id="true" defaultValue="true" name="captions" defaultChecked="true" />
         <label htmlFor="true">Yes</label>
-        <input type="radio" id="false" defaultValue="no" name="captions" />
+        <input type="radio" id="false" defaultValue="false" name="captions" />
         <label htmlFor="false">Nope</label>
 
         <input type="hidden" name="access_token" defaultValue={accessToken}/>
