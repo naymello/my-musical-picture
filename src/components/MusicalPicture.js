@@ -86,7 +86,7 @@ const MusicalPicture = () => {
     return textInformation
   }
 
-  const setTheme = (theme) => {
+  const getTheme = (theme) => {
     const lightTheme = {
       backgroundColor: '#FCFCFC',
       color: '#000000',
@@ -114,12 +114,12 @@ const MusicalPicture = () => {
   const { title, firstResultName, addInfo1, addInfo2 } = getText(type, timeRange)
   
   return (
-    <StyledPicture theme={setTheme(theme)}>
-      <h3><HighlightText theme={setTheme(theme)}>{title}</HighlightText></h3>
+    <StyledPicture theme={getTheme(theme)}>
+      <h3><HighlightText theme={getTheme(theme)}>{title}</HighlightText></h3>
 
       <HighlightSection>
         <img src={firstImageUrl} />
-        <span><HighlightText theme={setTheme(theme)}>{firstResultName}</HighlightText></span>
+        <span><HighlightText theme={getTheme(theme)}>{firstResultName}</HighlightText></span>
         <span>{addInfo1}</span>
         <span>{addInfo2}</span>
       </HighlightSection>
@@ -131,7 +131,7 @@ const MusicalPicture = () => {
         ))}
       </OthersSection>
 
-      <h5>My Musical <LogoHighlight theme={setTheme(theme)}>Picture</LogoHighlight></h5>
+      <h5>My Musical <LogoHighlight theme={getTheme(theme)}>Picture</LogoHighlight></h5>
     </StyledPicture>
   )
 }
