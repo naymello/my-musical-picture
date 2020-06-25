@@ -152,7 +152,10 @@ const MusicalPicture = () => {
         ))}
       </OthersSection>
 
-      <h5>My Musical <LogoHighlight theme={getTheme(theme)}>Picture</LogoHighlight></h5>
+      {/* If the title gets two lines then there's no space on the picture for the logo to be shown */}
+      {title
+      ? title.length <= 33 && <h5>My Musical <LogoHighlight theme={getTheme(theme)}>Picture</LogoHighlight></h5>
+      : null}
     </StyledPicture>
   )
 }
