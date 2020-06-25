@@ -1,9 +1,9 @@
 {
   "name": "my-musical-picture",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "private": false,
+  "description": "Web application that makes custom pictures based on user's history on Spotify",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "naymello",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.22.15",
