@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Seo from '../components/Seo'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 
@@ -17,6 +18,7 @@ import darkImg from '../assets/dark.webp'
 
 const IndexPage = () => (
   <>
+    <Seo title="Home"/>
     <GlobalStyle />
     <Navigation />
     <Wrapper>
