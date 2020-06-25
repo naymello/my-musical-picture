@@ -55,7 +55,7 @@ export const OthersSection = styled.section`
 
     /* Space to fit the captions if they're included */
     position: relative;
-    bottom: ${props => props.captions === 'true' ? '16.75px' : '0'};
+    bottom: ${props => props.captions > 0 ? '16.75px' : '0'};
   }
 `
 
