@@ -38,7 +38,7 @@ const IndexPage = () => (
 
           <h2>Enjoy it!</h2>
         
-          <Button to="/settings">Log in with Spotify</Button>
+          <Button onClick={() => window.open('http://my-musical-picture-server.herokuapp.com/login')}>Log in with Spotify</Button>
         </TextSection>
       </FlexContainer>
     </Wrapper>
