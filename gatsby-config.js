@@ -29,12 +29,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts-v2`,
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
           {
-            family: 'Poppins',
-            weights: [300, 400, 500, 700]
+            family: `Poppins`,
+            variants: [`300`, `400`, `500`, `700`]
           }
         ]
       }
