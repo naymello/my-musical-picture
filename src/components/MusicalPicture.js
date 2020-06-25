@@ -92,6 +92,8 @@ const MusicalPicture = () => {
   }
 
   const getTheme = (theme) => {
+  if (!userTopMusic) return {}
+
     const lightTheme = {
       backgroundColor: '#FCFCFC',
       color: '#000000',
@@ -116,7 +118,7 @@ const MusicalPicture = () => {
   }
 
   const getCaptions = () => {
-    if (!userTopMusic) return []
+    if (!userTopMusic || captionsIsSelected === 'false') return []
 
     const captions = userTopMusic.map(current => current.name.match(/^.*?(?= -)/) || current.name)
     captions.shift()
@@ -140,7 +142,7 @@ const MusicalPicture = () => {
       </HighlightSection>
 
       <h4>Other {type}</h4>
-      <OthersSection captions={captionsIsSelected}>
+      <OthersSection captions={captions.length}>
         {imageUrls.map((imgUrl, index) => (
           <div>
             {captionsIsSelected === 'true' &&
