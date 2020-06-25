@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#FFFFFF`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: ``
+        icon: `src/assets/icon.svg`
       },
     },
     {
