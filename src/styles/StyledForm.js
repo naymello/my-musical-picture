@@ -4,7 +4,7 @@ const StyledForm = styled.form`
   margin-top: 15px;
 
   label {
-    padding: 10px 0;
+    padding: 7.5px 0;
     background-color: #EEFF00;
     display: inline-block;
     width: 33.33%;
@@ -12,8 +12,12 @@ const StyledForm = styled.form`
     text-align: center;
     font-size: 1.6rem;
     font-weight: 500;
-    margin: 10px 0;
+    margin: 10px 0 20px;
     cursor: pointer;
+
+    @media (min-width: 480px) {
+      padding: 10px 0;
+    }
   }
 
   input:checked + label{
@@ -29,7 +33,7 @@ const StyledForm = styled.form`
     width: 100%;
     max-width: 1020px;
     height: 5rem;
-    margin-top: 50px;
+    margin: 50px 0;
     border: none;
     font-size: 1.6rem;
     font-weight: 700;
