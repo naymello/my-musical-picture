@@ -7,12 +7,16 @@ import Captions from '../styles/Captions'
 const MusicalPicture = () => {
   const [userTopMusic, setUserTopMusic] = useState(null)
   const [userFirstName, setUserFirstName] = useState(null)
-  
-  const type = new URLSearchParams(window.location.search).get('type')
-  const accessToken = new URLSearchParams(window.location.search).get('access_token')
-  const timeRange = new URLSearchParams(window.location.search).get('time_range')
-  const theme = new URLSearchParams(window.location.search).get('theme')
-  const captionsIsSelected = new URLSearchParams(window.location.search).get('captions')
+
+  let type, accessToken, timeRange, theme, captionsIsSelected
+
+  if (typeof window !== `undefined`) {
+    type = new URLSearchParams(window.location.search).get('type')
+    accessToken = new URLSearchParams(window.location.search).get('access_token')
+    timeRange = new URLSearchParams(window.location.search).get('time_range')
+    theme = new URLSearchParams(window.location.search).get('theme')
+    captionsIsSelected = new URLSearchParams(window.location.search).get('captions')
+  }
   
   const backendUrl = 'http://my-musical-picture-server.herokuapp.com'
 

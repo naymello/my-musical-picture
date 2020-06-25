@@ -4,7 +4,11 @@ import StyledForm from '../styles/StyledForm'
 import Wrapper from '../styles/Wrapper'
 
 const Form = () => {
-  const accessToken = new URLSearchParams(window.location.search).get('access_token')
+  let accessToken
+
+  if (typeof window !== `undefined`) {
+    accessToken = new URLSearchParams(window.location.search).get('access_token')
+  }
 
   return (
     <Wrapper maxWidth="768px">
