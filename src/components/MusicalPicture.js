@@ -18,7 +18,8 @@ const MusicalPicture = () => {
     captionsIsSelected = new URLSearchParams(window.location.search).get('captions')
   }
   
-  const backendUrl = 'https://my-musical-picture-server.herokuapp.com'
+  // const backendUrl = 'https://my-musical-picture-server.herokuapp.com'
+  const backendUrl = 'http://localhost:8888'
 
   useEffect(() => {
     const fetchSpotifyData = async () => {
@@ -142,7 +143,7 @@ const MusicalPicture = () => {
       </HighlightSection>
 
       <h4>Other {type}</h4>
-      <OthersSection captions={captions.length}>
+      <OthersSection captions={captions}>
         {imageUrls.map((imgUrl, index) => (
           <div>
             {captionsIsSelected === 'true' &&
