@@ -13,7 +13,7 @@ const StyledPicture = styled.div`
   padding: 5px 20px;
 
   h3 {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   h4 {
