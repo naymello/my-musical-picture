@@ -7,6 +7,8 @@ import Seo from '../components/Seo'
 import MusicalPicture from '../components/MusicalPicture'
 
 import Button from '../styles/Button'
+import Wrapper from '../styles/Wrapper'
+import PictureBody from '../styles/PictureBody'
 
 const ImagePage = () => {
   let theme
@@ -60,16 +62,19 @@ const ImagePage = () => {
   return (
     <>
       <Seo title="Picture" />
-      <MusicalPicture
-        pictureRef={myPicture}
-        theme={getTheme(theme)}
-      />
-      <Button 
-        onClick={() => savePicture(myPicture.current)}
-        theme={getTheme(theme)}
-      >
-        Download picture
-      </Button>
+      <PictureBody theme={getTheme(theme)}/>
+      <Wrapper picture>
+        <MusicalPicture
+          pictureRef={myPicture}
+          theme={getTheme(theme)}
+        />
+        <Button 
+          onClick={() => savePicture(myPicture.current)}
+          theme={getTheme(theme)}
+        >
+          Download picture
+        </Button>
+      </Wrapper>
     </>
   )
 }
