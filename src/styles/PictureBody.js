@@ -5,6 +5,9 @@ const PictureBody = createGlobalStyle`
     background-color: ${props => props.theme.bodyBackgroundColor};
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `
 
