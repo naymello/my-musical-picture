@@ -18,8 +18,7 @@ const MusicalPicture = () => {
     captionsIsSelected = new URLSearchParams(window.location.search).get('captions')
   }
   
-  // const backendUrl = 'https://my-musical-picture-server.herokuapp.com'
-  const backendUrl = 'http://localhost:8888'
+  const backendUrl = 'https://my-musical-picture-server.herokuapp.com'
 
   useEffect(() => {
     const fetchSpotifyData = async () => {
@@ -154,9 +153,7 @@ const MusicalPicture = () => {
       </OthersSection>
 
       {/* If the title gets two lines then there's no space on the picture for the logo to be shown */}
-      {title
-      ? title.length <= 33 && <h5>My Musical <LogoHighlight theme={getTheme(theme)}>Picture</LogoHighlight></h5>
-      : null}
+      {title && title.length <= 33 && <h5>My Musical <LogoHighlight theme={getTheme(theme)}>Picture</LogoHighlight></h5>}
     </StyledPicture>
   )
 }
