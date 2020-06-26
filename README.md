@@ -3,25 +3,27 @@
 <p float="left" align="middle">
   <img src="https://i.imgur.com/IyMnFad.png" width="275px">
   <img src="https://i.imgur.com/YzjHEW1.png" width="275px">
-  <img src="https://i.imgur.com/lKMSjWw.png" width="275px">
+  <img src="https://i.ibb.co/X4JwWFR/mymusicalpicture.png" width="275px">
 </p>
 
-## O que é?
+## What is it?
 
-Com o objetivo de compartilhamento e socialização, o My Musical Picture cria uma **imagem** baseada no histórico do usuário no Spotify, apresentando seu estilo musical de forma completamente personalizável: o usuário pode escolher o que quer que seja apresentado nela (entre músicas, albums ou artistas), do período de tempo que desejar e com o esquema de cores que preferir. A imagem já vem em um tamanho padrão para ser postada em status de redes sociais, facilitando o compartilhamento.
+My Musical Picture creates a picture based on user's history on Spotify, showing their musical style in a fully customizable way: the user can choose what they want to be shown (tracks, albums or artists), from when to get the data (this month, this semester or all time) and the color scheme they like the most. The picture is made in a standart size to be posted on social network, making the sharing easier.
 
-## Tecnologias utilizadas
+## Technologies used
 
 ### Front-end
-- HTML
-- SCSS
-- JavaScript (vanilla)
-- Webpack
+- Gatsby
+- React (with Hooks)
+- Styled Components
 
-### Back-end
+### [Back-end](https://github.com/naymello/my-musical-picture-server)
 - NodeJS
 - Express
 
 ### APIs
 - Spotify API
-- Fetch
+
+## Libraries
+- [DOM to image](https://github.com/tsayen/dom-to-image)
+- [FileSaver](https://github.com/eligrey/FileSaver.js/)
