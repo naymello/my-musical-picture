@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import Navbar from './Navbar'
 import StyledFooter from './StyledFooter'
@@ -21,6 +21,11 @@ const Wrapper = styled.div`
     margin: 0 auto;
     padding: 0 20px;
   }
+
+  ${props => props.picture && css`
+    width: 375px;
+    height: 747px;
+  `}
 `
 
 export default Wrapper
