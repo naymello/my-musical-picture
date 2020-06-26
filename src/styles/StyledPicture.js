@@ -5,9 +5,6 @@ const StyledPicture = styled.div`
   color: ${props => props.theme.color};
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 375px;
   height: 667px;
   padding: 5px 20px;
