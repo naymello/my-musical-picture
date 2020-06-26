@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 import domtoimage from 'dom-to-image'
 import FileSaver from 'file-saver'
@@ -11,15 +11,19 @@ import Wrapper from '../styles/Wrapper'
 import PictureBody from '../styles/PictureBody'
 
 const ImagePage = () => {
-  let theme
+  const [theme, setTheme] = useState('')
 
-  if (typeof window !== `undefined`) {
-    theme = new URLSearchParams(window.location.search).get('theme')
-  }
+  useEffect(() => {
+    if (typeof window !== `undefined`) {
+      setTheme(new URLSearchParams(window.location.search).get('theme'))
+    }
+  }, [])
 
   const myPicture = useRef()
 
   const getTheme = (theme) => {
+    if (!theme) return {}
+
     const lightTheme = {
       backgroundColor: '#FCFCFC',
       color: '#000000',
@@ -62,18 +66,20 @@ const ImagePage = () => {
     }
   }
 
+  const selectedTheme = getTheme(theme)
+
   return (
     <>
       <Seo title="Picture" />
-      <PictureBody theme={getTheme(theme)}/>
+      <PictureBody theme={selectedTheme}/>
       <Wrapper picture>
         <MusicalPicture
           pictureRef={myPicture}
-          theme={getTheme(theme)}
+          theme={selectedTheme}
         />
         <Button 
           onClick={() => savePicture(myPicture.current)}
-          theme={getTheme(theme)}
+          theme={selectedTheme}
         >
           Download picture
         </Button>
