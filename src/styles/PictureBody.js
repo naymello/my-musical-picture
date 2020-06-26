@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 const PictureBody = createGlobalStyle`
   body {
-    background-color: ${props => props.theme.bodyBackground};
+    background-color: ${props => props.theme.bodyBackgroundColor};
     margin: 0;
     padding: 0;
   }

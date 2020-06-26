@@ -23,19 +23,22 @@ const ImagePage = () => {
     const lightTheme = {
       backgroundColor: '#FCFCFC',
       color: '#000000',
-      highlight: '#EEFF00 '
+      highlight: '#EEFF00',
+      bodyBackgroundColor: '#F0F0F0'
     }
     
     const darkTheme = {
       backgroundColor: '#000000',
       color: '#FFFFFF',
-      highlight: '#DC1F1F'
+      highlight: '#DC1F1F',
+      bodyBackgroundColor: '#0A0A0A'
     }
 
     const coloredTheme = {
       backgroundColor: '#2929B1',
       color: '#F9FF3E',
-      highlight: '#FF10A0'
+      highlight: '#FF10A0',
+      bodyBackgroundColor: '#1E1E7B'
     }
 
     if (theme === 'light') return lightTheme
