@@ -8,13 +8,12 @@ const MusicalPicture = (props) => {
   const [userTopMusic, setUserTopMusic] = useState(null)
   const [userFirstName, setUserFirstName] = useState(null)
 
-  let type, accessToken, timeRange, theme, captionsIsSelected
+  let type, accessToken, timeRange, captionsIsSelected
 
   if (typeof window !== `undefined`) {
     type = new URLSearchParams(window.location.search).get('type')
     accessToken = new URLSearchParams(window.location.search).get('access_token')
     timeRange = new URLSearchParams(window.location.search).get('time_range')
-    theme = new URLSearchParams(window.location.search).get('theme')
     captionsIsSelected = new URLSearchParams(window.location.search).get('captions')
   }
   
@@ -91,32 +90,6 @@ const MusicalPicture = (props) => {
     return textInformation
   }
 
-  const getTheme = (theme) => {
-  if (!userTopMusic) return {}
-
-    const lightTheme = {
-      backgroundColor: '#FCFCFC',
-      color: '#000000',
-      highlight: '#EEFF00 '
-    }
-    
-    const darkTheme = {
-      backgroundColor: '#000000',
-      color: '#FFFFFF',
-      highlight: '#DC1F1F'
-    }
-
-    const coloredTheme = {
-      backgroundColor: '#2929B1',
-      color: '#F9FF3E',
-      highlight: '#FF10A0'
-    }
-
-    if (theme === 'light') return lightTheme
-    if (theme === 'dark') return darkTheme
-    if (theme === 'colored') return coloredTheme
-  }
-
   const getCaptions = () => {
     if (!userTopMusic || captionsIsSelected === 'false') return []
 
@@ -131,12 +104,12 @@ const MusicalPicture = (props) => {
   const captions = getCaptions()
 
   return (
-    <StyledPicture ref={props.pictureRef} theme={getTheme(theme)}>
-      <h3><HighlightText theme={getTheme(theme)}>{title}</HighlightText></h3>
+    <StyledPicture ref={props.pictureRef} theme={props.theme}>
+      <h3><HighlightText theme={props.theme}>{title}</HighlightText></h3>
 
       <HighlightSection>
         <img src={firstImageUrl} />
-        <span><HighlightText theme={getTheme(theme)}>{firstResultName}</HighlightText></span>
+        <span><HighlightText theme={props.theme}>{firstResultName}</HighlightText></span>
         <span>{addInfo1}</span>
         <span>{addInfo2}</span>
       </HighlightSection>
@@ -146,14 +119,14 @@ const MusicalPicture = (props) => {
         {imageUrls.map((imgUrl, index) => (
           <div>
             {captionsIsSelected === 'true' &&
-            <Captions theme={getTheme(theme)}>{captions[index]}</Captions>}
+            <Captions theme={props.theme}>{captions[index]}</Captions>}
             <img src={imgUrl} />
           </div>
         ))}
       </OthersSection>
 
       {/* If the title gets two lines then there's no space on the picture for the logo to be shown */}
-      {title && title.length <= 33 && <h5>My Musical <LogoHighlight theme={getTheme(theme)}>Picture</LogoHighlight></h5>}
+      {title && title.length <= 33 && <h5>My Musical <LogoHighlight theme={props.theme}>Picture</LogoHighlight></h5>}
     </StyledPicture>
   )
 }
