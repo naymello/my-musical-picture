@@ -4,7 +4,7 @@ import StyledPicture, { HighlightSection, OthersSection, LogoHighlight } from '.
 import HighlightText from '../styles/HighlightText'
 import Captions from '../styles/Captions'
 
-const MusicalPicture = () => {
+const MusicalPicture = (props) => {
   const [userTopMusic, setUserTopMusic] = useState(null)
   const [userFirstName, setUserFirstName] = useState(null)
 
@@ -125,13 +125,13 @@ const MusicalPicture = () => {
 
     return captions
   }
-  
+
   const [firstImageUrl, imageUrls] = getImageUrls(type)
   const { title, firstResultName, addInfo1, addInfo2 } = getText(type, timeRange)
   const captions = getCaptions()
-  
+
   return (
-    <StyledPicture theme={getTheme(theme)}>
+    <StyledPicture ref={props.pictureRef} theme={getTheme(theme)}>
       <h3><HighlightText theme={getTheme(theme)}>{title}</HighlightText></h3>
 
       <HighlightSection>
