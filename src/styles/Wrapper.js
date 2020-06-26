@@ -23,6 +23,7 @@ const Wrapper = styled.div`
   }
 
   ${props => props.picture && css`
+    margin: 0;
     width: 375px;
     height: 747px;
   `}
