@@ -3,6 +3,7 @@ import styled from 'styled-components'
 const Captions = styled.div`
   background-color: ${props => props.theme.highlight};
   color: ${props => props.theme.color};
+  padding: 0 5px;
   position: relative;
   top: 85%;
   height: 15%;
