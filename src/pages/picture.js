@@ -35,7 +35,7 @@ const ImagePage = () => {
       backgroundColor: '#000000',
       color: '#FFFFFF',
       highlight: '#DC1F1F',
-      bodyBackgroundColor: '#0A0A0A'
+      bodyBackgroundColor: '#0F0F0F'
     }
 
     const coloredTheme = {
