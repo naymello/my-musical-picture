@@ -16,7 +16,7 @@ const MusicalPicture = (props) => {
     timeRange = new URLSearchParams(window.location.search).get('time_range')
     captionsIsSelected = new URLSearchParams(window.location.search).get('captions')
   }
-  
+
   const backendUrl = 'https://my-musical-picture-server.herokuapp.com'
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const MusicalPicture = (props) => {
       const firstNameRes = await fetch(`${backendUrl}/name?access_token=${accessToken}`)
       const firstNameJson = await firstNameRes.json()
       setUserFirstName(firstNameJson)
-  
+
       const topMusicRes = await fetch(`${backendUrl}/topmusic?access_token=${accessToken}&type=${type}&time_range=${timeRange}`)
       const topMusicJson = await topMusicRes.json()
       setUserTopMusic(topMusicJson)
@@ -35,13 +35,13 @@ const MusicalPicture = (props) => {
 
   const getImageUrls = (type) => {
     if (!userTopMusic) return [[], []]
-    
+
     const imageUrls = type === 'tracks'
       ? userTopMusic.map(track => track.album.images[1].url)
       : userTopMusic.map(current => current.images[1].url)
     
     const firstImageUrl = imageUrls.shift()
-    
+
     return [firstImageUrl, imageUrls]
   }
 
@@ -49,19 +49,19 @@ const MusicalPicture = (props) => {
     if (!userTopMusic || !userFirstName) return {}
 
     let title, addInfo1, addInfo2
-    
+
     const singularType = type.slice(0, -1) //Example: 'artists' becomes 'artist'
-    
+
     if (timeRange === 'short') {
-      title = `${userFirstName}'s ${singularType} of the month` 
+      title = `${userFirstName}'s ${singularType} of the month`
     }
     else if (timeRange === 'medium') {
-      title = `${userFirstName}'s ${singularType} of the semester` 
+      title = `${userFirstName}'s ${singularType} of the semester`
     }
     else if (timeRange === 'long') {
       title = `${userFirstName}'s favorite ${singularType}`
     }
-    
+
     const firstResult = userTopMusic[0]
     const firstResultName = firstResult.name.substring(0, 40).match(/^.*?(?= -)/)
       || firstResult.name.substring(0, 40)
@@ -108,7 +108,7 @@ const MusicalPicture = (props) => {
       <h3><HighlightText theme={props.theme}>{title}</HighlightText></h3>
 
       <HighlightSection>
-        <img src={firstImageUrl} />
+        <img src={firstImageUrl} alt="First result"/>
         <span><HighlightText theme={props.theme}>{firstResultName}</HighlightText></span>
         <span>{addInfo1}</span>
         <span>{addInfo2}</span>
@@ -119,8 +119,18 @@ const MusicalPicture = (props) => {
         {imageUrls.map((imgUrl, index) => (
           <div>
             {captionsIsSelected === 'true' &&
-            <Captions theme={props.theme}>{captions[index]}</Captions>}
-            <img src={imgUrl} />
+              <Captions
+                theme={props.theme}
+                key={index}
+              >
+                {captions[index]}
+              </Captions>
+            }
+            <img
+              src={imgUrl}
+              key={index}
+              alt=""
+            />
           </div>
         ))}
       </OthersSection>
