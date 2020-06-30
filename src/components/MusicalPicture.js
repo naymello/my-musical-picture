@@ -31,7 +31,7 @@ const MusicalPicture = (props) => {
     }
 
     fetchSpotifyData()
-  }, [])
+  }, [accessToken, timeRange, type])
 
   const getImageUrls = (type) => {
     if (!userTopMusic) return [[], []]
