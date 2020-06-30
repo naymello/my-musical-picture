@@ -117,18 +117,18 @@ const MusicalPicture = (props) => {
       <h4>Other {type}</h4>
       <OthersSection captions={captions}>
         {imageUrls.map((imgUrl, index) => (
-          <div>
+          <div key={`container${index}`}>
             {captionsIsSelected === 'true' &&
               <Captions
                 theme={props.theme}
-                key={index}
+                key={`caption${index}`}
               >
                 {captions[index]}
               </Captions>
             }
             <img
               src={imgUrl}
-              key={index}
+              key={`img${index}`}
               alt=""
             />
           </div>
