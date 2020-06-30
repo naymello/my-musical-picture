@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
 import Navbar from '../styles/Navbar'
 import Wrapper from '../styles/Wrapper'
@@ -7,45 +7,33 @@ import StyledLink from '../styles/StyledLink'
 import logo from '../assets/logo.svg'
 import hamburger from '../assets/hamburger.svg'
 
-class Navigation extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-      isActive: false
-    }
+const Navigation = () => {
+  const [isActive, setIsActive] = useState(false)
+
+  const toggleNav = () => {
+    setIsActive(prevIsActive => !prevIsActive)
   }
 
-  toggleNav = () => {
-    this.setState(prevState => ({
-      isActive: !prevState.isActive
-    }))
+  const disableNav = () => {
+    setIsActive(false)
   }
 
-  disableNav = () => {
-    this.setState({
-      isActive: false
-    })
-  }
-
-  render() {
-    return (
-      <Navbar isActive={this.state.isActive}>
-        <Wrapper>
-          <img src={logo} alt="Logo"/>
-          <ul>
-            <li><StyledLink href="https://github.com/naymello/my-musical-picture-client" onClick={this.disableNav}>GitHub</StyledLink></li>
-            <li><StyledLink href="#" onClick={this.disableNav}>About</StyledLink></li>
-          </ul>
-          <img
-            src={hamburger}
-            onClick={this.toggleNav}
-            alt="Hamburger menu"
-          />
-        </Wrapper>
-      </Navbar>
-    )
-  }
+  return (
+    <Navbar isActive={isActive}>
+      <Wrapper>
+        <img src={logo} alt="Logo" />
+        <ul>
+          <li><StyledLink href="https://github.com/naymello/my-musical-picture-client" onClick={disableNav}>GitHub</StyledLink></li>
+          <li><StyledLink href="#" onClick={disableNav}>About</StyledLink></li>
+        </ul>
+        <img
+          src={hamburger}
+          onClick={toggleNav}
+          alt="Hamburger menu"
+        />
+      </Wrapper>
+    </Navbar>
+  )
 }
 
 export default Navigation
