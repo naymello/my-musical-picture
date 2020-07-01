@@ -9,7 +9,7 @@ import Wrapper from '../styles/Wrapper'
 import HighlightText from '../styles/HighlightText'
 import FlexContainer from '../styles/FlexContainer'
 import ImageSection from '../styles/ImageSection'
-import TextSection from '../styles/TextSection'
+import InfoSection from '../styles/InfoSection'
 import Button from '../styles/Button'
 
 import coloredImg from '../assets/colored.webp'
@@ -29,7 +29,7 @@ const IndexPage = () => (
           <img src={lightImg} alt="Light theme" />
           <img src={darkImg} alt="Dark theme" />
         </ImageSection>
-        <TextSection>
+        <InfoSection>
           <h2>Made for you to share.</h2>
           <p>My Musical Picture generates an image with your style and favourite music, perfectly sized for sharing in social network.</p>
 
@@ -39,7 +39,7 @@ const IndexPage = () => (
           <h2>Enjoy it!</h2>
 
           <Button onClick={() => window.open('http://my-musical-picture-server.herokuapp.com/login')}>Log in with Spotify</Button>
-        </TextSection>
+        </InfoSection>
       </FlexContainer>
     </Wrapper>
     <Footer />
