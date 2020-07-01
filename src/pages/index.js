@@ -34,10 +34,10 @@ const IndexPage = () => (
             <h2>Made for you to share.</h2>
             <p>My Musical Picture generates an image with your style and favourite music, perfectly sized for sharing in social network.</p>
 
-            <h2>Albums and colours!</h2>
-            <p>Exclusive on My Musical Picture, as in other web apps based on Spotify you only have artists and songs data.</p>
+            <h2>Albums and colors!</h2>
+            <p>Exclusive on My Musical Picture, as in other web apps based on Spotify you only have artists and songs data avaliable.</p>
 
-            <h2>Enjoy it!</h2>
+            <h2><HighlightText>Enjoy it!</HighlightText></h2>
           </div>
           <Button onClick={() => window.open('http://my-musical-picture-server.herokuapp.com/login')}>Log in with Spotify</Button>
         </InfoSection>
