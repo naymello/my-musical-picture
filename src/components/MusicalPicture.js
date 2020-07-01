@@ -30,7 +30,18 @@ const MusicalPicture = (props) => {
 
       const topMusicRes = await fetch(`${backendUrl}/topmusic?access_token=${accessToken}&type=${type}&time_range=${timeRange}`)
       const topMusicJson = await topMusicRes.json()
-      setUserTopMusic(topMusicJson)
+
+      if (topMusicJson.length > 0) {
+        setUserTopMusic(topMusicJson)
+      }
+      else if ((topMusicJson.length === 0) && (timeRange !== 'long')) {
+        alert('There\'s no data in this time range to make the picture. Try selecting a longer time range (e.g. \'All time\').')
+        return window.history.back()
+      }
+      else if ((topMusicJson.length === 0) && (timeRange === 'long')) {
+        alert('There\'s no data in this Spotify account to make the picture.')
+        return window.location = '/'
+      }
     }
 
     fetchSpotifyData()
