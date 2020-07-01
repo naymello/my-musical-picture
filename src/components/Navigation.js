@@ -24,7 +24,7 @@ const Navigation = () => {
         <img src={logo} alt="Logo" />
         <ul>
           <li><StyledLink href="https://github.com/naymello/my-musical-picture-client" onClick={disableNav}>GitHub</StyledLink></li>
-          <li><StyledLink href="#" onClick={disableNav}>About</StyledLink></li>
+          <li><StyledLink href="mailto:naymellodev@gmail.com?subject=BugReport" onClick={disableNav}>Report a bug</StyledLink></li>
         </ul>
         <img
           src={hamburger}
