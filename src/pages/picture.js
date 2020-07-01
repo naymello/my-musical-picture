@@ -52,13 +52,16 @@ const ImagePage = () => {
 
   const savePicture = async (node) => {
     try {
-      const blob = await domtoimage.toBlob(node, {
+      //Scale the image for better quality
+      const pictureScaling = {
         height: node.offsetHeight * 2,
         width: node.offsetWidth * 2,
         style: {
           transform: `scale(2) translate(${node.offsetWidth / 4}px, ${node.offsetHeight / 4}px)`
         }
-      })
+      }
+
+      const blob = await domtoimage.toBlob(node, pictureScaling)
       FileSaver.saveAs(blob, 'mymusicalpicture.png')
     }
     catch (error) {

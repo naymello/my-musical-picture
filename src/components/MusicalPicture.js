@@ -83,14 +83,7 @@ const MusicalPicture = (props) => {
       addInfo2 = firstResult.genres[1]
     }
 
-    const textInformation = {
-      title,
-      firstResultName,
-      addInfo1,
-      addInfo2,
-    }
-
-    return textInformation
+    return { title, firstResultName, addInfo1, addInfo2 }
   }
 
   const getCaptions = () => {
