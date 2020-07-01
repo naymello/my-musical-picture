@@ -7,7 +7,6 @@ const Button = styled.button`
   color: ${props => props.theme.color || '#000000'};
   width: 100%;
   height: 60px;
-  margin-top: auto;
   border: none;
   text-decoration: none;
   text-transform: uppercase;

@@ -1,22 +1,30 @@
 import styled from 'styled-components'
 
-const TextSection = styled.footer`
+import Button from './Button'
+
+const InfoSection = styled.footer`
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   margin-top: 50px;
 
-  h2, p {
-    display: none;
+  /* Text information */
+  div {
+    margin-top: 30px;
   }
 
   @media (min-width: 1024px) {
     margin-top: 0;
+    flex-direction: column;
     margin-left: 50px;
 
-    h2, p {
-      display: block;
+    div {
+      margin-top: 0;
+    }
+
+    ${Button} {
+      margin-top: auto;
     }
   }
 `
 
-export default TextSection
+export default InfoSection
