@@ -6,3 +6,4 @@ const HighlightText = styled.span`
 `
 
 export default HighlightText
+
