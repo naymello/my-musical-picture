@@ -21,9 +21,9 @@ const MusicalPicture = (props) => {
       setCaptionsIsSelected(new URLSearchParams(window.location.search).get('captions'))
     }
 
-    const backendUrl = 'https://my-musical-picture-server.herokuapp.com'
-
     const fetchSpotifyData = async () => {
+      const backendUrl = 'https://my-musical-picture-server.herokuapp.com'
+
       const firstNameRes = await fetch(`${backendUrl}/name?access_token=${accessToken}`)
       const firstNameJson = await firstNameRes.json()
       setUserFirstName(firstNameJson)
