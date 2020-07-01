@@ -53,11 +53,10 @@ const Navbar = styled.nav`
       height: 2rem;
       flex-direction: row;
       margin-left: auto;
-      width: 150px;
+      width: 200px;
       background-color: #EEFF00;
       box-sizing: content-box;
       padding: 10px 30px;
-      max-width: 50rem;
       position: static;
       pointer-events: all;
       opacity: 1;
