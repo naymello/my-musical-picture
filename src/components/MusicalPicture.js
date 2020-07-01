@@ -8,18 +8,21 @@ const MusicalPicture = (props) => {
   const [userTopMusic, setUserTopMusic] = useState(null)
   const [userFirstName, setUserFirstName] = useState(null)
 
-  let type, accessToken, timeRange, captionsIsSelected
-
-  if (typeof window !== `undefined`) {
-    type = new URLSearchParams(window.location.search).get('type')
-    accessToken = new URLSearchParams(window.location.search).get('access_token')
-    timeRange = new URLSearchParams(window.location.search).get('time_range')
-    captionsIsSelected = new URLSearchParams(window.location.search).get('captions')
-  }
-
-  const backendUrl = 'https://my-musical-picture-server.herokuapp.com'
+  const [type, setType] = useState(null)
+  const [accessToken, setAccessToken] = useState(null)
+  const [timeRange, setTimeRange] = useState(null)
+  const [captionsIsSelected, setCaptionsIsSelected] = useState(null)
 
   useEffect(() => {
+    if (typeof window !== `undefined`) {
+      setType(new URLSearchParams(window.location.search).get('type'))
+      setAccessToken(new URLSearchParams(window.location.search).get('access_token'))
+      setTimeRange(new URLSearchParams(window.location.search).get('time_range'))
+      setCaptionsIsSelected(new URLSearchParams(window.location.search).get('captions'))
+    }
+
+    const backendUrl = 'https://my-musical-picture-server.herokuapp.com'
+
     const fetchSpotifyData = async () => {
       const firstNameRes = await fetch(`${backendUrl}/name?access_token=${accessToken}`)
       const firstNameJson = await firstNameRes.json()
