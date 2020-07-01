@@ -39,7 +39,7 @@ const MusicalPicture = (props) => {
     const imageUrls = type === 'tracks'
       ? userTopMusic.map(track => track.album.images[1].url)
       : userTopMusic.map(current => current.images[1].url)
-    
+
     const firstImageUrl = imageUrls.shift()
 
     return [firstImageUrl, imageUrls]
@@ -108,7 +108,7 @@ const MusicalPicture = (props) => {
       <h3><HighlightText theme={props.theme}>{title}</HighlightText></h3>
 
       <HighlightSection>
-        <img src={firstImageUrl} alt="First result"/>
+        <img src={firstImageUrl} alt="First result" />
         <span><HighlightText theme={props.theme}>{firstResultName}</HighlightText></span>
         <span>{addInfo1}</span>
         <span>{addInfo2}</span>

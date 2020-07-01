@@ -44,8 +44,8 @@ const Form = () => {
         <input type="radio" id="false" defaultValue="false" name="captions" />
         <label htmlFor="false">Nope</label>
 
-        <input type="hidden" name="access_token" defaultValue={accessToken}/>
-        
+        <input type="hidden" name="access_token" defaultValue={accessToken} />
+
         <input type="submit" value="Get picture" />
       </StyledForm>
     </Wrapper>

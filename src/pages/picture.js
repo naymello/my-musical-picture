@@ -30,7 +30,7 @@ const ImagePage = () => {
       highlight: '#EEFF00',
       bodyBackgroundColor: '#F0F0F0'
     }
-    
+
     const darkTheme = {
       backgroundColor: '#000000',
       color: '#FFFFFF',
@@ -71,13 +71,13 @@ const ImagePage = () => {
   return (
     <>
       <Seo title="Picture" />
-      <PictureBody theme={selectedTheme}/>
+      <PictureBody theme={selectedTheme} />
       <Wrapper picture>
         <MusicalPicture
           pictureRef={myPicture}
           theme={selectedTheme}
         />
-        <Button 
+        <Button
           onClick={() => savePicture(myPicture.current)}
           theme={selectedTheme}
         >

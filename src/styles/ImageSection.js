@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const ImageSection =  styled.section`
+const ImageSection = styled.section`
   grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
   grid-template-rows: 1fr 1fr 10fr 1fr 1fr;
   display: grid;
