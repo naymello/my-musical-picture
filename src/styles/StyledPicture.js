@@ -31,12 +31,13 @@ export const HighlightSection = styled.section`
   "image name"
   "image addinfo1"
   "image addinfo2"
-  "image ."
   "image .";
 
   img {
     grid-area: image;
-    width: 100%;
+    width: 139.125px;
+    height: 139.125px;
+    object-fit: cover;
   }
 `
 
