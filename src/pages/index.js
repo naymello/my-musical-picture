@@ -43,7 +43,6 @@ const IndexPage = () => (
         </InfoSection>
       </FlexContainer>
     </Wrapper>
-    <Footer />
   </>
 )
 
