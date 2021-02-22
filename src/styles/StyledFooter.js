@@ -7,7 +7,7 @@ const StyledFooter = styled.footer`
   background-color: #F5F5F5;
   margin-top: 40px;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1024px) and (min-height: 800px) {
     position: absolute;
     bottom: 0;
   }
