@@ -8,7 +8,7 @@
 
 ## What is it?
 
-My Musical Picture creates a picture based on user's history on Spotify, showing their musical style in a fully customizable way: the user can choose what they want to be shown (tracks, albums or artists), from when to get the data (this month, this semester or all time) and the color scheme they like the most. The picture is made in a standart size to be posted on social network, making the sharing easier.
+My Musical Picture creates a picture based on user's history on Spotify, showing their musical style in a fully customizable way: the user can choose what they want to be shown (tracks, albums or artists), from when to get the data (this month, this semester or all time) and the color scheme they like the most. The picture is made in a standard size to be posted on social network, making the sharing easier.
 
 ## Technologies used
 
